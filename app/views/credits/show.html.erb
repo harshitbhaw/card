@@ -1,0 +1,22 @@
+<div>
+    <p><%= @credit.name %></p>
+    <p><%= @credit.card_number.to_s.gsub(/\d(?=[0-9]{4})/, '*') %></p>
+    <div>
+    <p class ="data"><%= @credit.cvc.to_s.gsub(/\d(?=[0-9]{0})/, '*') %></p>
+    <p class ="data" style="display :none"><%= @credit.cvc %></p><button>show/hide</button>
+    </div>
+    <p><%= @credit.start_Date %></p>
+    <p><%= @credit.end_date %></p>
+</div>
+<%= link_to 'Edit', edit_credit_path(@credit) %>
+<%= link_to 'delete', credit_path(@credit), method: :delete %>
+<%= link_to 'Back', credits_path %>
+<%= link_to 'Card Billings',credit_billings_path(@credit) %>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".data").toggle();
+  });
+});
+</script>

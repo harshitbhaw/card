@@ -1,0 +1,33 @@
+
+<%= form_with scope: billing, url: credit_billings_path, local: true do |form| %>
+
+    <p>
+        <%= form.label :CardNumber %>
+        <%= form.text_field :card_number %>
+    </p>
+    <p>
+        <%= form.label :CVC %>
+        <%= form.text_field :cvc %>
+    </p>
+    <p>
+        <%= form.label :PostalCode %>
+        <%= form.text_field :postal_code %>
+    </p>
+    <p>
+        <%= form.label :validthru %>
+        <%= form.date_field :valid_thru %>
+    </p>
+    <p>
+        <%= form.label :TotalMount %>
+        <%= form.date_field :total_amount %>
+    </p>
+    <p>
+    <%= form.label :AmountPaid %>
+    <%= form.date_field :amount_paid %>
+</p>
+    <p>
+        <%= form.label :AmountDue %>
+        <%= form.date_field :due_amount %>
+    </p>
+    <p><%= form.submit %></p>
+<% end %>

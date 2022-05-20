@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>Card Number</td>
+        <td>CVC</td>
+        <td>Postal Code</td>
+        <td>Valid Thru</td>
+        <td>Total Amount</td>
+        <td>Amount Paid</td>
+        <td>Amount Due</td>
+    </tr>
+
+    <% @credit.billings.each do |billing| %>
+        <tr>
+            <td><%= billing.card_number %></td>
+            <td><%= billing.cvc %></td>
+            <td><%= billing.postal_code %></td>
+            <td><%= billing.valid_thru %></td>
+            <td><%= billing.total_amount %></td>
+            <td><%= billing.amount_paid %></td>
+            <td><%= billing.due_amount %></td>     
+        </tr>
+    <% end %>
+    <%= link_to 'new',new_credit_billing_path(@credit) %>
+</table>

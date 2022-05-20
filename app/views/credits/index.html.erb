@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <td>Card Holder Name</td>
+    </tr>
+
+    <% @credits.each do |credit| %>
+        <tr>
+            <td><%= credit.name %></td>
+            <td><%#= credit.card_number %></td>
+            <td><%#= credit.cvc %></td>
+            <td><%#= credit.start_Date %></td>
+            <td><%#= credit.end_date %></td>
+            <td><%= link_to 'Card Details Page', credit_path(credit) %></td>
+        </tr>
+    <% end %>
+    <%= link_to 'Add Credit',new_credit_path(@credit) %>
+</table>
+<%= link_to 'Back', root_path %>

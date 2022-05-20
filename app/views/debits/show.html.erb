@@ -1,0 +1,24 @@
+<div>
+    <p><%= @debit.name %></p>
+    <p><%= @debit.card_number.to_s.gsub(/\d(?=[0-9]{4})/, '*') %></p>
+    <div>
+        <span class ="data1">
+            <%= @debit.cvc.to_s.gsub(/\d(?=[0-9]{0})/, '*') %></span>
+            <span class="data1" style="display: none" ><%= @debit.cvc %></span>
+        <button id="show">Show</button>
+    </div>
+    <p><%= @debit.valid_from %></p>
+    <p><%= @debit.valid_thru %></p>
+</div>
+<%= link_to 'Edit', edit_debit_path(@debit) %>
+<%= link_to 'delete', debit_path(@debit), method: :delete %>
+<%= link_to 'Back', debits_path %>
+<%= link_to 'Card Billings', debit_billings_path(@debit) %>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".data1").toggle();
+  });
+});
+</script>

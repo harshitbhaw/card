@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <td>Card Holder Name</td>
+    </tr>
+
+    <% @debits.each do |debit| %>
+        <tr>
+            <td><%= debit.name %></td>
+            <td><%#= debit.card_number %></td>
+            <td><%#= debit.cvc %></td>
+            <td><%#= debit.valid_from %></td>
+            <td><%#= debit.valid_thru %></td>
+            <td><%= link_to 'Card Details page', debit_path(debit) %></td>
+        </tr>
+    <% end %>
+    <%= link_to 'Add Debit',new_debit_path(@debit) %><br>
+</table>
+<%= link_to 'Back', root_path %>

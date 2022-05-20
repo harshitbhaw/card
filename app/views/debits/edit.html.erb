@@ -1,0 +1,25 @@
+<%= form_with(model: @debit, local: true) do |form| %>
+    <p>
+    <%= form.label :cardholdername %>
+    <%= form.text_field :name %>
+    </p>
+    <p>
+    <%= form.label :CardNumber %>
+    <%= form.text_field :card_number %>
+    </p>
+    <p>
+    <%= form.label :CVC %>
+    <%= form.text_field :cvc %>
+    </p>
+    <p>
+    <%= form.label :StarDate %>
+    <%= form.date_field :valid_from %>
+    </p>
+    <p>
+    <%= form.label :EndDate %>
+    <%= form.date_field :valid_thru %>
+    </p>
+    <p>
+    <%= form.submit %>
+    </p>
+<% end %>

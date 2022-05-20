@@ -1,0 +1,10 @@
+<div>
+    <h2>card details page</h2>
+
+    <div class="">
+        <%= link_to 'credit cards', credits_path(@credit) %> &nbsp<span><%= current_user.credits.count %></span> 
+    </div>
+    <div class="">
+    <%= link_to 'Debit cards',debits_path(@debit) %> &nbsp<span><%= current_user.debits.count %></h4>
+    </div>
+</div>

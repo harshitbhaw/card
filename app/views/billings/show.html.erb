@@ -1,0 +1,10 @@
+<div>
+    
+    <p><%= @billing.card_number.to_s.gsub(/\d(?=[0-9]{4})/, '*') %></p>
+    <p class ="data"><%= @billing.cvc.to_s.gsub(/\d(?=[0-9]{0})/, '*') %></p>
+    <p><%= @billing.postal_code %></p>
+    <p><%= @billing.valid_thru %></p>
+    <p><%= @billing.total_amount %></p>
+    <p><%= @billing.amount_paid %></p>
+    <p><%= @billing.due_amount %></p>
+</div>
